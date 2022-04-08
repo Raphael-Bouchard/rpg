@@ -258,6 +258,46 @@ void Guerrier::boirePotionDeMana(int quantitePotion)
 
 
 //*******************************************************************************************************************************************************************************//
+//***************************************** debut methodes de la classe Magicien ****************************************************************************************************//
+//******************************************************************************************************************************************************************************//
+
+Magicien::Magicien() :  Personnage("Gland-half",200,450,"cure-dent",2,"boule de feu de niveau 1",5)
+{}
+Magicien::Magicien(string nomPersonnage, int ptsVie,int ptsMana, string nomArme, int degatsArme, string nomMagie,int degatsMagie): Personnage( nomPersonnage, ptsVie, ptsMana,  nomArme, degatsArme,nomMagie, degatsMagie)
+{}
+
+//méthode permettant a un personnage de gagner des points de vies
+void Magicien::boirePotionDeVie(int quantitePotion)
+{
+
+    m_vie += quantitePotion;
+
+
+    if (m_vie > 200) //Interdiction de dépasser 100 de vie
+    {
+        m_vie = 200;
+    }
+}
+
+
+//méthode permettant a un personnage de gagner des points de mana
+void Magicien::boirePotionDeMana(int quantitePotion)
+{
+    m_mana += quantitePotion;
+
+    if (m_mana > 200) //Interdiction de dépasser 100 de vie
+    {
+        m_mana = 200;
+    }
+}
+
+//*******************************************************************************************************************************************************************************//
+//***************************************** fin methodes de la classe Magicien ****************************************************************************************************//
+//******************************************************************************************************************************************************************************//
+
+
+
+//*******************************************************************************************************************************************************************************//
 //***************************************** debut methodes de la classe Ogre ****************************************************************************************************//
 //******************************************************************************************************************************************************************************//
 Ogre::Ogre() : Personnage("Ogre des montagnes",250,250,"Massue",20,"crie féroce",10)
@@ -402,7 +442,7 @@ void notice()
 
 }
 
-// verifie que le choix du joeur est possible. 
+// verifie que le choix du joeur est possible.
 int verif_choix_joueur(int choix_du_joueur, int nbre_choix_possible)
 {
 

@@ -86,6 +86,15 @@ class Guerrier : public Personnage
 };
 
 
+class Magicien : public Personnage
+{
+  public :
+  Magicien();
+  Magicien(string nomPersonnage, int ptsVie,int ptsMana, string nomArme, int degatsArme, string nomMagie,int degatsMagie);
+  void boirePotionDeVie(int quantitePotion);
+  void boirePotionDeMana( int quantitePotion);
+};
+
 class Ogre : public Personnage
 {
   public :
