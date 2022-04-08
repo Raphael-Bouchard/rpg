@@ -101,10 +101,11 @@ class Ogre : public Personnage
 int action_joueur(int compte_tour);
 int choix_personnage_a_attaquer();
 vector<string> lecture_fichiers_donnees(string chemin);
-vector<string> remplissage_vecteur_arme();
+/*vector<string> remplissage_vecteur_arme();
 vector<string> remplissage_vecteur_sort();
 vector<string> remplissage_vecteur_potion_mana();
-vector<string> remplissage_vecteur_potion_vie();
+vector<string> remplissage_vecteur_potion_vie();*/
+void afficher_statuts(int cpmote_tour, Personnage joueur, Guerrier guerrier, Ogre ogre);
 
 
 

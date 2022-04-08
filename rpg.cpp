@@ -356,7 +356,24 @@ int choix_personnage_a_attaquer()
   return joueur_a_attaquer;
 }
 
+void afficher_statuts(int compte_tour, Personnage joueur1, Guerrier goliath, Ogre Ogre)
+{
+  cout << "                                  " << endl;
+  cout << "***************************************" << endl;
+  cout << "*status des joueurs à la fin du tour "<<compte_tour <<"*" << endl;
+  cout << "***************************************" << endl;
+  joueur1.afficherEtat();
 
+  // affiche les status des personnages
+  if (goliath.estVivant())
+  {
+    goliath.afficherEtat();
+  };
+  if (Ogre.estVivant())
+  {
+    Ogre.afficherEtat();
+  };
+}
 
 
 /*void echange(double& c, double& b)

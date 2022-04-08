@@ -34,14 +34,20 @@ int main()
   Guerrier goliath;
   Ogre Ogre;
 
-
+  // affiche les particicpants au point de départ
+  cout << "***************************************" << endl;
+  cout << "* Initialisation : statuts des joueurs *" << endl;
+  cout << "***************************************" << endl;
+  joueur1.afficherEtat();
+  goliath.afficherEtat();
+  Ogre.afficherEtat();
 
 
 
   // début de la boucle du jeu
   do {
     // boucle permettant de sélécctionner l'affichage de la console pour les status
-    if (compte_tour<1) // première boucle : initialisation
+    /*if (compte_tour<1) // première boucle : initialisation
     {
       // affiche les particicpants au point de départ
       cout << "***************************************" << endl;
@@ -50,12 +56,12 @@ int main()
       joueur1.afficherEtat();
       goliath.afficherEtat();
       Ogre.afficherEtat();
-    }
+    }*/
 
-    else// affiche l'état des personnages vivanats pour tous les autres tours que le premier
-    {
+    //else// affiche l'état des personnages vivanats pour tous les autres tours que le premier
+    //{
       // affiche le status des personnages
-      cout << "                                  " << endl;
+      /*cout << "                                  " << endl;
       cout << "***************************************" << endl;
       cout << "*status des joueurs à la fin du tour "<<compte_tour <<"*" << endl;
       cout << "***************************************" << endl;
@@ -70,12 +76,12 @@ int main()
       {
         Ogre.afficherEtat();
       };
-    };
+    //};*/
 
     compte_tour++;
     cout << "              " << endl;
     cout << "**** Appuyez sur une touche puis sur entrer pour passer au tour " << compte_tour<< " ****"<< endl;
-    cin >> enter;
+    cin >> enter ;
     system("clear");
 
     choix_Joueur = action_joueur(compte_tour);
@@ -500,6 +506,9 @@ int main()
       cout <<"FELICITATION VOUS AVEZ GAGNE LA PARTIE"<< endl;
       exit(0.);
     }
+
+    afficher_statuts(compte_tour, joueur1, goliath, Ogre);
+
 
 
   } while(joueur1.estVivant());
