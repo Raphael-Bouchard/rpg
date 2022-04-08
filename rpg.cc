@@ -22,7 +22,7 @@ int main()
   liste_potion_mana = lecture_fichiers_donnees("potionMagie.dat");
   liste_potions_vie = lecture_fichiers_donnees("potionDeVie.dat");
 
-
+  notice();
 
 
 

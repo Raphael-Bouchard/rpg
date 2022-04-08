@@ -362,7 +362,33 @@ void afficher_statuts(int compte_tour, Personnage joueur1, Guerrier goliath, Ogr
   };
 }
 
-
+void notice()
+{
+  int choix;
+  cout << "Souhaitez vous lire la notice? Taper sur le nombre correspondant" << endl;
+  cout << "1) Oui" << endl;
+  cout << "2) Non" << endl;
+  cin >> choix ;
+  if (choix ==1 )
+  {
+    cout << "Vous allez vous retrouver dans l'arène avec le héros légendraire Goliath ainsi qu'un ogre. Votre objectif est de tuer l'ogre avec l'aide de Goliath" << endl;
+    cout << "Toutefois, Goliath ne souhaite pas rentrer victorieux à vos cotés, il souhaite garder la vedette" << endl;
+    cout << "Ainsi, sous certaines conditions il se mettra à vous attaquer avec L'ogre."<< endl;
+    cout << " Votre objectif est donc de tuer l'ensemble des personnes présentent dans l'arène." << endl;
+    cout << "                  "<< endl;
+    cout << "Pour se faire vous avez à disposition des armes et des sors Vous pouvez changer d'arme et de sors à tout moment."<< endl;
+    cout << "Cependant tous ces changements se font de manière aléatoire ! Faites donc attention !" << endl;
+    cout << "Enfin, des potions de mana et de soins sont disponibles, mais encore une fois certaines sont piégées et obtenues de manière aléatoires !" << endl;
+    cout << "" << endl;
+    cout << "BONNE CHANCE !" << endl;
+    cout << " " << endl;
+    cout << " " << endl;
+  }
+  string choix2;
+  cout << "Appuyez sur entrer pour continuer"<< endl;
+  getline(cin,choix2);
+  system("clear");
+}
 /*void echange(double& c, double& b)
 {
 
