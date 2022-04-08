@@ -22,8 +22,7 @@ int main()
   liste_potion_mana = lecture_fichiers_donnees("potionMagie.dat");
   liste_potions_vie = lecture_fichiers_donnees("potionDeVie.dat");
 
-  notice();
-
+  notice(); // Sert a demander et afficher la notic epour les joeuurs qui ne connaissent pas le jeu.
 
 
   cout << "Quel est le nom de votre personnage ? " << endl;

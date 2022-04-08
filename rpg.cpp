@@ -326,6 +326,7 @@ int action_joueur(int compte_tour)
   cout <<"5) boire une potion de vie" << endl;
   cout <<"6) boire une potion de mana" << endl;
   cin >> choix_Joueur;
+  choix_Joueur = verif_choix_joueur(choix_Joueur,6);
 //  system("clear");
   return choix_Joueur;
 }
@@ -363,13 +364,17 @@ void afficher_statuts(int compte_tour, Personnage joueur1, Guerrier goliath, Ogr
 void notice()
 {
   int choix;
+  string enter;
   cout << "Souhaitez vous lire la notice? Taper sur le nombre correspondant" << endl;
   cout << "1) Oui" << endl;
   cout << "2) Non" << endl;
   cin >> choix ;
-  if (choix ==1 )
+  choix = verif_choix_joueur(choix, 2);
+  system("clear");
+  getline(cin,enter); //pourquoi j'ai besoinde cette logne?
+  if (choix ==1)
   {
-    cout << "Vous allez vous retrouver dans l'arène avec le héros légendraire Goliath ainsi qu'un ogre. Votre objectif est de tuer l'ogre avec l'aide de Goliath" << endl;
+    cout << "Vous allez vous retrouver dans l'arène avec le héros légendraire Goliath, ainsi qu'un ogre. Votre objectif est de tuer l'ogre avec l'aide de Goliath" << endl;
     cout << "Toutefois, Goliath ne souhaite pas rentrer victorieux à vos cotés, il souhaite garder la vedette" << endl;
     cout << "Ainsi, sous certaines conditions il se mettra à vous attaquer avec L'ogre."<< endl;
     cout << " Votre objectif est donc de tuer l'ensemble des personnes présentent dans l'arène." << endl;
@@ -381,9 +386,41 @@ void notice()
     cout << "BONNE CHANCE !" << endl;
     cout << " " << endl;
     cout << " " << endl;
+    cout << "Appuyez sur entrer pour continuer"<< endl;
+    getline(cin,enter);
+    system("clear");
   }
-  string choix2;
+  /*string choix2;
   cout << "Appuyez sur entrer pour continuer"<< endl;
-  getline(cin,choix2);
-  system("clear");
+  getline(cin,choix2);*/
+  //system("clear");
+
+}
+
+int verif_choix_joueur(int choix_du_joueur, int nbre_choix_possible)
+{
+
+  vector<int> vecteur_des_choix(0);
+  bool pass = false;
+  for (int i=0; i<nbre_choix_possible; i++)
+    {
+      vecteur_des_choix.push_back(i+1);
+    }
+
+  do{
+        for (int i=0; i<nbre_choix_possible; i++)
+            {
+              if (choix_du_joueur == vecteur_des_choix[i])
+                {
+                  pass =true;
+                }
+            }
+        if (pass == false)
+          {
+            cout << "Veuillez indiquer un nombre compris entre 1 et " << nbre_choix_possible << endl;
+            cin >> choix_du_joueur;
+          }
+  }while (pass ==false);
+
+  return choix_du_joueur;
 }
