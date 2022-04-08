@@ -103,16 +103,7 @@ void Personnage::changerSort(string nomNouveauSort, int degatsNouveauSort)
 // méthode donnant les informations courantes sur un personnage
 void Personnage::afficherEtat() const
 {
-  /*cout << "            "<< endl;
-  cout << m_nomPersonnage << " statut : " << endl;
-  cout << "Il reste " << m_vie <<" points de vie "<< endl ;
-  cout << "Ainsi que " << m_mana << " points de mana " << endl ;
-  cout << "Il connait le sort : " ;
-  cout << m_magie.getNomSort() << endl;
-  cout <<  "faisant " << m_magie.getDegats();
-  cout << " dégats "<< endl;
-  cout << "Et possède l'arme : " << m_arme.getNomArme() <<endl;
-  cout << "faisant " << m_arme.getDegats() << " dégats "<< endl;*/
+
 
 
   cout << "                                                           " << endl;
@@ -130,7 +121,6 @@ void Personnage::afficherEtat() const
   cout <<"************************************************************" << endl;
   cout << "* Dégats arme    *       "<< m_arme.getDegats() << endl;
   cout <<"************************************************************" << endl;
-  cout << "                                                           " << endl;
   cout << "                                                           " << endl;
 }
 

@@ -23,6 +23,9 @@ int main()
   liste_potions_vie = lecture_fichiers_donnees("potionDeVie.dat");
 
 
+
+
+
   cout << "Quel est le nom de votre personnage ? " << endl;
   getline(cin, nom_Personnage);
   system ("clear");
@@ -46,12 +49,12 @@ int main()
 
   // début de la boucle du jeu
   do {
-  
+
 
     compte_tour++;
     cout << "              " << endl;
-    cout << "**** Appuyez sur une touche puis sur entrer pour passer au tour " << compte_tour<< " ****"<< endl;
-    cin >> enter ;
+    cout << "**** Appuyez sur entrer pour passer au tour " << compte_tour<< " ****"<< endl;
+    getline(cin,enter);
     system("clear");
 
     choix_Joueur = action_joueur(compte_tour);
@@ -476,6 +479,9 @@ int main()
       cout <<"FELICITATION VOUS AVEZ GAGNE LA PARTIE"<< endl;
       exit(0.);
     }
+
+    cout <<  "**** Appuyez sur entrer pour voir le statut des joueurs " << endl ;
+    getline(cin,enter);
 
     afficher_statuts(compte_tour, joueur1, goliath, Ogre);
 
