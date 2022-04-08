@@ -27,7 +27,7 @@ int main()
 
 
   cout << "Quel est le nom de votre personnage ? " << endl;
-  getline(cin, nom_Personnage);
+  cin>> nom_Personnage;
   system ("clear");
 
 
@@ -460,7 +460,7 @@ int main()
         exit(0.);
       }
     }
-    else renvoie message d'erreur si il est mort
+    else //renvoie message d'erreur si il est mort
     {
       cout << "             " << endl;
       cout << "L'Ogre est mort il ne participe donc plus au combat " << endl;
