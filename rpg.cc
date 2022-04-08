@@ -46,37 +46,7 @@ int main()
 
   // début de la boucle du jeu
   do {
-    // boucle permettant de sélécctionner l'affichage de la console pour les status
-    /*if (compte_tour<1) // première boucle : initialisation
-    {
-      // affiche les particicpants au point de départ
-      cout << "***************************************" << endl;
-      cout << "* Initialisation : statuts des joueurs *" << endl;
-      cout << "***************************************" << endl;
-      joueur1.afficherEtat();
-      goliath.afficherEtat();
-      Ogre.afficherEtat();
-    }*/
-
-    //else// affiche l'état des personnages vivanats pour tous les autres tours que le premier
-    //{
-      // affiche le status des personnages
-      /*cout << "                                  " << endl;
-      cout << "***************************************" << endl;
-      cout << "*status des joueurs à la fin du tour "<<compte_tour <<"*" << endl;
-      cout << "***************************************" << endl;
-      joueur1.afficherEtat();
-
-      // affiche les status des personnages
-      if (goliath.estVivant())
-      {
-        goliath.afficherEtat();
-      };
-      if (Ogre.estVivant())
-      {
-        Ogre.afficherEtat();
-      };
-    //};*/
+  
 
     compte_tour++;
     cout << "              " << endl;
