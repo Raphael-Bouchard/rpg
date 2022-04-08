@@ -311,8 +311,6 @@ vector<string> lecture_fichiers_donnees( string chemin )
 }
 
 
-
-
 int action_joueur(int compte_tour)
 {
   int choix_Joueur;
@@ -389,61 +387,3 @@ void notice()
   getline(cin,choix2);
   system("clear");
 }
-/*void echange(double& c, double& b)
-{
-
-    double tampon(c);
-    c = b;
-    b = tampon +2 ;
-
-}
-
-int nombreDeSecondes(int heures, int minutes, int secondes)
-{
-    int total = 0;
-
-    total = heures * 60 * 60;
-    total += minutes * 60;
-    total += secondes;
-
-    return total;
-}
-
-
-double fonctionMoyenne(vector<double> tableauNotes)
-{
-  double moyenne(0);
-  int const tailleTableaux(tableauNotes.size());
-  cout << "taille du tableau =" << tailleTableaux << endl;
-  for (int i = 0; i < tailleTableaux; i++)
-  {
-    moyenne += tableauNotes[i];
-  }
-  moyenne /= tailleTableaux;
-
-  return moyenne;
-}
-
-
-
-vector<vector<int>> remplisssageGrille(vector<vector<int>> grille)
-{
-  int tailleGrille =grille[1].size();
-  for(int i =0; i< tailleGrille; i++ )
-    {
-          grille[i][i] = 1;
-    }
-
-    for(int i =0; i< tailleGrille; i++ )
-      {
-
-          grille[i][i+1] = 2;
-      }
-      for(int i =1; i< tailleGrille; i++ )
-        {
-
-            grille[i][i-1] = 3;
-        }
-
-    return grille;
-}*/
