@@ -103,7 +103,7 @@ void Personnage::changerSort(string nomNouveauSort, int degatsNouveauSort)
 // méthode donnant les informations courantes sur un personnage
 void Personnage::afficherEtat() const
 {
-  cout << "            "<< endl;
+  /*cout << "            "<< endl;
   cout << m_nomPersonnage << " statut : " << endl;
   cout << "Il reste " << m_vie <<" points de vie "<< endl ;
   cout << "Ainsi que " << m_mana << " points de mana " << endl ;
@@ -112,8 +112,26 @@ void Personnage::afficherEtat() const
   cout <<  "faisant " << m_magie.getDegats();
   cout << " dégats "<< endl;
   cout << "Et possède l'arme : " << m_arme.getNomArme() <<endl;
-  cout << "faisant " << m_arme.getDegats() << " dégats "<< endl;
-  return ;
+  cout << "faisant " << m_arme.getDegats() << " dégats "<< endl;*/
+
+
+  cout << "                                                           " << endl;
+  cout << m_nomPersonnage << " statut : " << endl;
+  cout <<"************************************************************" << endl;
+  cout << "* Points de vie  *       "<< m_vie << endl ;
+  cout <<"************************************************************" << endl;
+  cout << "* Points de mana *       "<< m_mana << endl ;
+  cout <<"************************************************************" << endl;
+  cout << "* Sort           *       "<< m_magie.getNomSort() << endl;
+  cout <<"************************************************************" << endl;
+  cout << "* Dégats du sort *       "<< m_magie.getDegats() << endl;
+  cout <<"************************************************************" << endl;
+  cout << "* Arme           *       "<< m_arme.getNomArme()<< endl;
+  cout <<"************************************************************" << endl;
+  cout << "* Dégats arme    *       "<< m_arme.getDegats() << endl;
+  cout <<"************************************************************" << endl;
+  cout << "                                                           " << endl;
+  cout << "                                                           " << endl;
 }
 
 // éthode renvoyant un booléen sur l'état de vie d'un personnage
@@ -195,10 +213,12 @@ void Magie::afficher()
 {
   cout << "le nom du sort est : " << m_nom << "(dégats : "<< m_degats<< ")" << endl;
 };
+
 int Magie::getDegats() const
 {
   return m_degats;
 };
+
 string Magie::getNomSort() const
 {
   return m_nom;

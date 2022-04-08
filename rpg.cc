@@ -38,10 +38,6 @@ int main()
 
 
 
-  Ogre.changerArme("Massue",20);
-
-
-
   // début de la boucle du jeu
   do {
     // boucle permettant de sélécctionner l'affichage de la console pour les status
@@ -49,14 +45,14 @@ int main()
     {
       // affiche les particicpants au point de départ
       cout << "***************************************" << endl;
-      cout << "* Initialisation : status des joueurs *" << endl;
+      cout << "* Initialisation : statuts des joueurs *" << endl;
       cout << "***************************************" << endl;
       joueur1.afficherEtat();
       goliath.afficherEtat();
       Ogre.afficherEtat();
     }
 
-    else// pour tous les autres tours
+    else// affiche l'état des personnages vivanats pour tous les autres tours que le premier
     {
       // affiche le status des personnages
       cout << "                                  " << endl;
@@ -95,6 +91,7 @@ int main()
           system("clear");
           switch (joueur_a_attaquer)
                 {
+                  // Cas ou l'on souahaite attaqur goliath
                   case 1:
                           if (goliath.estVivant())
                             {
@@ -106,22 +103,25 @@ int main()
                               cout << "Goliath est mort, ça ne sert donc à rien" << endl;
                             }
                   break;
-        case 2:
-        if (Ogre.estVivant())
-         {
-           joueur1.attaquer(Ogre);
-           cout << "vous avez attaqué l'ogre avec votre arme" << endl;
-        }
-        else
-        {
-          cout << "L'ogre est mort, ça ne sert donc à rien" << endl;
-        }
-        break;
-        default:
-        exit(0.);
-      }
+                  // cas ou l'on shouaiate attaquer l'ogre
+                  case 2:
+                          if (Ogre.estVivant())
+                            {
+                              joueur1.attaquer(Ogre);
+                              cout << "vous avez attaqué l'ogre avec votre arme" << endl;
+                            }
+                          else
+                            {
+                              cout << "L'ogre est mort, ça ne sert donc à rien" << endl;
+                            }
+                 break;
+                 // cas par defuat ne renvoyant rien
+                 default:
+                 exit(0.);
+                }
       break;
 
+      // choix de l'attaque par magie
       case 2 :
       joueur_a_attaquer = choix_personnage_a_attaquer();
       system("clear");
@@ -141,11 +141,13 @@ int main()
       }
       break;
 
+
+      // changer d'arme
       case 3:
       cout << "Vous avez choisi de changer d'armes !" << endl;
       int changement_arme_joueur; // indice donnant la position du nom de l'arme selcetionnée
       changement_arme_joueur = rand() % 199; // indice aléatoire
-      if( changement_arme_joueur %2 == 1) // on fat en sorte qu'il soit pair car le vecetur est construi de maniere nom arme, degats, nom arme, degats etc...
+      if( changement_arme_joueur %2 == 1) // on fat en sorte qu'il soit pair car le vecteur est construit de maniere nom arme, degats, nom arme, degats etc...
       {
         changement_arme_joueur-=1;
       };
@@ -156,6 +158,8 @@ int main()
       cout << " dégats" << endl;
       break;
 
+
+      // changer de sort
       case 4:
       cout << "Vous avez choisi de changer de sort !" << endl;
       int changement_sort_joueur;
@@ -170,6 +174,8 @@ int main()
       cout << " dégats" << endl;
       break;
 
+
+      // boire potion de vie
       case 5:
       int potion_vie_joueur1;
       potion_vie_joueur1 = rand()% 199;
@@ -183,6 +189,8 @@ int main()
       cout << " points de vie" << endl;
       break;
 
+
+      // boire potion de mana
       case 6:
       int potion_mana_joueur;
       cout << "Vous avez choisi de boire une potion de mana !" << endl;
@@ -197,6 +205,7 @@ int main()
       cout << " points de mana" << endl;
       break;
 
+      // defautlt case si ça ne fonctionne pas
       default:
       exit(0.);
     }
