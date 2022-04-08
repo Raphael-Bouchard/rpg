@@ -192,8 +192,7 @@ int main()
 
 
     // tour de goliath
-
-    if (goliath.estVivant())
+    if (goliath.estVivant()) // verif que goliath est vivant puis son tour
     {
       cout << "         " << endl;
       cout << "C'est au tour de goliath :" << endl;
@@ -328,21 +327,15 @@ int main()
         exit(0.);
       }
     }
-    else
+    else // renvoie message d'erreur si il est mort
     {
       cout << "             " << endl;
       cout << "Goliath est mort il ne participe donc plus au combat " << endl;
     }
 
 
-
-    /***********************************************************/
-    /* a mettre dans une fonction et pareil pour l'ogre */
     // tour de l'ogre
-
-
-
-    if (Ogre.estVivant())
+    if (Ogre.estVivant()) // verification que l'ogre est vivant puis son tour
     {
       cout << "         " << endl;
       cout << "C'est au tour de l'ogre :" << endl;
@@ -467,12 +460,13 @@ int main()
         exit(0.);
       }
     }
-    else
+    else renvoie message d'erreur si il est mort
     {
       cout << "             " << endl;
       cout << "L'Ogre est mort il ne participe donc plus au combat " << endl;
     }
 
+    // verififcation de victoire
     if (goliath.estVivant() == false && Ogre.estVivant()==false)
     {
       system("clear");
@@ -480,6 +474,8 @@ int main()
       exit(0.);
     }
 
+
+    // affichage des status des personnages enore en liste.
     cout <<  "**** Appuyez sur entrer pour voir le statut des joueurs " << endl ;
     getline(cin,enter);
 
@@ -487,153 +483,13 @@ int main()
 
 
 
-  } while(joueur1.estVivant());
+  } while(joueur1.estVivant()); // conditions de la boucle do
 
 
+  // Message final si notre personnage est mort.
   cout << "VOUS AVEZ PERDU !" << endl;
   cout << "RELANCEZ LE PROGRAMME POUR REESSAYER" << endl;
 
-
-
-
-  // goliath.attaquer(joueur1); //goliath attaque joueur1
-  // Ogre.attaquer(goliath);
-  // joueur1.boirePotionDeVie(20); //joueur1 récupère 20 de vie en buvant une potion
-  // goliath.attaquer(Ogre); //goliath réattaque joueur1
-  // joueur1.attaquer(goliath); //joueur1 contre-attaque... c'est assez clair non ?
-  //
-  // goliath.changerArme("Double hache tranchante vénéneuse de la mort", 40);
-  // goliath.attaquer(Ogre);
-  // joueur1.changerArme("fouet de feu",25);
-  // joueur1.attaquer(goliath);
-  // goliath.afficherEtat();
-  // joueur1.afficherEtat();
-  // Ogre.afficherEtat();
-  // Ogre.attaquer(joueur1);
-  // goliath.attaquer(joueur1);
-  // joueur1.afficherEtat();
-
-
-
-  /*  int  variable(5);
-  char test;
-  string maChaine;
-
-  maChaine = "yayaya";
-  maChaine.append("prout");
-  test = 97;
-
-  variable ++;
-  cout << maChaine << endl;
-
-
-
-
-  //   int const tailleTableaux(5);
-  //   int const tailleGrille(0);
-  //   vector<double> meilleursScores;
-  //   double moyenne;
-  //   int vctr[5];
-  //   vector<double>  vecteur(5,(0,2,3,4,5));
-  //   vector<vector<int>> grille;
-  //
-  //
-  //   grille.push_back(vector<int> (5));
-  //   grille.push_back(vector<int> (5));
-  //   grille.push_back(vector<int> (5));
-  //   grille.push_back(vector<int> (5));
-  //   grille.push_back(vector<int> (5));
-  //
-  //   meilleursScores.push_back(118218);  //Remplissage de la première case
-  //   meilleursScores.push_back(100432);  //Remplissage de la deuxième case
-  //   meilleursScores.push_back(87347);   //Remplissage de la troisième case
-  //   meilleursScores.push_back(64523);   //Remplissage de la quatrième case
-  //   meilleursScores.push_back(31415);   //Remplissage de la cinquième case
-  //   //meilleursScores.pop_back();
-  //
-  //
-  //
-  //   for (int i =0; i < tailleTableaux; i++)
-  //   {
-  //   //  cout << meilleursScores[i] << endl;
-  //
-  //     cout << "vecteur " << vecteur[i]<< endl;
-  //     cout << " vctr " << vctr[i] << endl;
-  //     cout << " vctr " << &vctr[i] << endl;
-  //     cout << " meilleur scores " << meilleursScores[i] << endl;
-  //     cout << " meilleur scores " << &meilleursScores[i] << endl;
-  //
-  //   }
-  //
-  //   moyenne = fonctionMoyenne(meilleursScores);
-  //
-  //   cout << "la moyenne des scores est : " << moyenne << endl;
-  //
-  // /*  cout << "donnez la taille de la grille " << endl;
-  // //  cin >> tailleGrille>> endl;
-  //
-  //   grille = remplisssageGrille(grille);
-  //
-  //
-
-
-  // technique affichage matrice à retenir
-  // cout << " affichage grille" << endl;
-  // for (int i = 0; i < grille[1].size(); i++)
-  // {
-  //   for (int j = 0; j < grille[1].size(); j++)
-  //   {
-  //     cout << grille[i][j] << " " ;
-  //
-  //   }
-  //   cout << " ligne "<< i << endl;
-  // }
-
-  /*  string const nomFichier("test_ecriture.txt");
-  ofstream monFlux("test2_ecriture.txt", ios::app);
-
-  if(monFlux)
-  {
-  monFlux << "Bonjour, je suis une phrase écrite dans un fichier." << endl;
-  monFlux << 42.1337 << endl;
-  int age(23);
-  monFlux << "J'ai " << age << " ans." << endl;
-
-  int taille_fichier;
-  monFlux.seekp(0,ios::end);
-  taille_fichier = monFlux.tellp();
-  cout << "le fichier fait " << taille_fichier <<" octets"<< endl;
-}
-else
-{
-cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
-}
-
-// lecture du paramètre du problème
-ifstream parametres("parametre.dat");
-double position_min, Rc, a, b, h0;
-if (parametres)
-{
-parametres >> position_min;
-parametres.seekg(106,ios::beg);
-parametres >> Rc;
-parametres.seekg(164,ios::beg);
-parametres>>a;
-parametres.seekg(232,ios::beg);
-parametres>>b;
-parametres.seekg(303,ios::beg);
-parametres>>h0;
-cout << "la position du minimum est : " << position_min <<" les paramètres géométriques a et b valent ";
-cout << a << " et " << b << " enfin la hauteur initiale est de : " << h0 << "m"<< endl;
-
-cout << "nous avons donc réussi à lire et écrire dans des fichiers ainsi qu'à nous déplacer dedans" <<endl;
-
-
-}
-else
-{
-cout << "ERREUR : impossible de lire le fichier " << endl;
-}*/
 
 
 return 0;

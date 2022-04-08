@@ -103,9 +103,6 @@ void Personnage::changerSort(string nomNouveauSort, int degatsNouveauSort)
 // méthode donnant les informations courantes sur un personnage
 void Personnage::afficherEtat() const
 {
-
-
-
   cout << "                                                           " << endl;
   cout << m_nomPersonnage << " statut : " << endl;
   cout <<"************************************************************" << endl;
