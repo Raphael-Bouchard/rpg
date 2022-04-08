@@ -1,0 +1,5 @@
+1.06023777165804717E-004 m    position du minimum avec la représentation courbée donnée par surface.f90
+0.001            m    Rc : Rayon de courbure du substrat
+0.00314          m    a  : longueur de la partie plate du substrat
+0.000785         m    b  : longueur de la partie courbée du substrat
+0.0001           m    h0 : hauteur initiale du fluide
