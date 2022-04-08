@@ -297,7 +297,6 @@ void Ogre::boirePotionDeMana(int quantitePotion)
 //lit le fichier conetnat le nom des armes et leur degats
 // puis les ranges dans un vecteur de string de la forme
 // nom arme, degats, nom arme, degats, nom arme, degats ...
-// autres fonctions de remplissage fonctionnent de la même manière
 vector<string> lecture_fichiers_donnees( string chemin )
 {
   ifstream mon_flux(chemin);
@@ -311,6 +310,8 @@ vector<string> lecture_fichiers_donnees( string chemin )
 }
 
 
+// Le joeur a un choix limiter d'actions
+// elles lui sont présentées ici et il fait son choix
 int action_joueur(int compte_tour)
 {
   int choix_Joueur;
@@ -319,19 +320,19 @@ int action_joueur(int compte_tour)
   cout << "*      Action du joueur : tour "<< compte_tour<< "      *"<< endl;
   cout << "***************************************" << endl;
   cout <<"Que voulez vous faire ? " << endl;
-  cout <<"1) attaquer un joueur avec votre arme " << endl;
-  cout <<"2) attaquer un joueur avec votre magie " << endl;
-  cout <<"3) changer d'arme" << endl;
-  cout <<"4) changer de sort" << endl;
-  cout <<"5) boire une potion de vie" << endl;
-  cout <<"6) boire une potion de mana" << endl;
+  cout <<"1) Attaquer un joueur avec votre arme " << endl;
+  cout <<"2) Attaquer un joueur avec votre magie " << endl;
+  cout <<"3) Changer d'arme" << endl;
+  cout <<"4) Changer de sort" << endl;
+  cout <<"5) Boire une potion de vie" << endl;
+  cout <<"6) Boire une potion de mana" << endl;
   cin >> choix_Joueur;
   choix_Joueur = verif_choix_joueur(choix_Joueur,6);
-//  system("clear");
   return choix_Joueur;
 }
 
-
+// De même que la fonction ci-dessus, c'est dans cette fonction que le joueur
+//choisit qui il va attaquer
 int choix_personnage_a_attaquer()
 {
   int joueur_a_attaquer;
@@ -342,6 +343,8 @@ int choix_personnage_a_attaquer()
   return joueur_a_attaquer;
 }
 
+
+// Fonction permettant d'afficher le statut de tous les des personnages encore en vie
 void afficher_statuts(int compte_tour, Personnage joueur1, Guerrier goliath, Ogre Ogre)
 {
   cout << "                                  " << endl;
@@ -361,6 +364,8 @@ void afficher_statuts(int compte_tour, Personnage joueur1, Guerrier goliath, Ogr
   };
 }
 
+
+// affiche la notice en début de partie si le joeuur le souhaite
 void notice()
 {
   int choix;
@@ -397,6 +402,7 @@ void notice()
 
 }
 
+// verifie que le choix du joeur est possible. 
 int verif_choix_joueur(int choix_du_joueur, int nbre_choix_possible)
 {
 
