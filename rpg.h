@@ -106,15 +106,18 @@ class Ogre : public Personnage
 
 
 
+
+
+
 // focntions annexes
 int action_joueur(int compte_tour);
 int choix_personnage_a_attaquer();
 vector<string> lecture_fichiers_donnees(string chemin);
 void notice();
-int verif_choix_joueur(int choix_Joueur, int nbre_choix_possible);
+int verif_reponse_utilisateur(string input);
+int verif_choix_joueur_qcm(int choix_Joueur, int nbre_choix_possible);
 void afficher_statuts(int cpmote_tour, Personnage joueur, Guerrier guerrier, Ogre ogre);
-
-
+bool isNumber(const string& str);
 
 
 

@@ -367,7 +367,7 @@ int action_joueur(int compte_tour)
   cout <<"5) Boire une potion de vie" << endl;
   cout <<"6) Boire une potion de mana" << endl;
   cin >> choix_Joueur;
-  choix_Joueur = verif_choix_joueur(choix_Joueur,6);
+  choix_Joueur = verif_choix_joueur_qcm(choix_Joueur,6);
   return choix_Joueur;
 }
 
@@ -414,7 +414,7 @@ void notice()
   cout << "1) Oui" << endl;
   cout << "2) Non" << endl;
   cin >> choix ;
-  choix = verif_choix_joueur(choix, 2);
+  choix = verif_choix_joueur_qcm(choix, 2);
   system("clear");
   getline(cin,enter); //pourquoi j'ai besoinde cette logne?
   if (choix ==1)
@@ -442,8 +442,11 @@ void notice()
 
 }
 
+
+// verifie que l'utilisateur a bien rentré un entier
+
 // verifie que le choix du joeur est possible.
-int verif_choix_joueur(int choix_du_joueur, int nbre_choix_possible)
+int verif_choix_joueur_qcm(int choix_du_joueur, int nbre_choix_possible)
 {
 
   vector<int> vecteur_des_choix(0);
@@ -469,4 +472,11 @@ int verif_choix_joueur(int choix_du_joueur, int nbre_choix_possible)
   }while (pass ==false);
 
   return choix_du_joueur;
+}
+
+
+// verifie si l'entree faite par le joeuur est un nombre ou pas
+bool isNumber(const string& str)
+{
+    return str.find_first_not_of( "0123456789" ) == string::npos;
 }

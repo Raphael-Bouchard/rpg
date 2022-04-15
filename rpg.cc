@@ -2,17 +2,56 @@
 
 
 
-
 int main()
 {
-  // déclaration des variables
-  string nom_Personnage;
-  string enter;
-  int choix_Joueur(0);
-  int joueur_a_attaquer(0);
-  int compte_tour(0);
-  srand((unsigned int)time(0));
-  vector<string> liste_armes(0),liste_sort(0), liste_potions_vie(0),liste_potion_mana(0);
+
+/* Creation du nombre de joueur, on va tester ça */
+// déclaration des variables
+
+string Rep_utilisateur_var;
+string nom_Personnage;
+string enter;
+bool sortie_de_boucle;
+int choix_Joueur;
+int joueur_a_attaquer(0);
+int compte_tour(0);
+srand((unsigned int)time(0));
+vector<string> liste_armes(0),liste_sort(0), liste_potions_vie(0),liste_potion_mana(0);
+vector<Personnage> liste_des_personnages(0);
+
+
+// ****************************************************************
+//************************ TO DO **********************************
+/* Limiter le nombre de joueur total à 4
+Ajuster la focntion permettant de vérfirier le choix de l'utilistaeur
+ajputer un fichier pour la simulation
+ajouter un fichier pour gérer l'ogre
+ajouter un fichier pour gérer goliath
+*/
+
+
+/*  do{
+            cout << " Combien y'a-t-il de joueur ?" << endl;
+            cin>> Rep_utilisateur_var;
+            sortie_de_boucle = isNumber(Rep_utilisateur_var);
+     }while(sortie_de_boucle==false);
+
+     choix_Joueur = std::stoi(Rep_utilisateur_var);
+     system("clear");
+
+     std::vector<string> v;
+     for (int i = 0; i <= choix_Joueur-1; i++) {
+       v.push_back("joueur"+to_string(i+1));
+     }
+
+     for (int i = 0; i < choix_Joueur-1; i++) {
+       cout << "Quel est le nom du joueur " << i+1 <<" ?" << endl;
+       cin >>nom_Personnage;
+       liste_des_personnages.push_back(Personnage v[i](nom_Personnage));
+
+     }*/
+
+
 
 
   // lit le fichier contenant les armes et leur dégats
